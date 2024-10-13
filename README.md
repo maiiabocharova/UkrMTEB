@@ -1,8 +1,8 @@
 # UkrMTEB
-Accompanying materials for the "General-purpose text embeddings learning for Ukrainian language"
+Accompanying materials for the "General-purpose text embeddings learning for Ukrainian language" paper.
 
 This repository contains the full code and data to reproduce all experiments. 
-Training and evaluation code are available in the `UkrTEB.ipynb` notebook (from getting the training data to evaluating the model on the benchmarks introduced in the study)
+Training and evaluation code is available in the `UkrTEB.ipynb` notebook (from getting the training data to evaluating the model on the benchmarks introduced in the paper)
 The notebook if fully self-contained and can be run in Google Colab as is.
 
 **Please consider citing the paper if you find it useful!**
