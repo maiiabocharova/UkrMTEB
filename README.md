@@ -1,5 +1,11 @@
 # UkrMTEB
-Dataset introduced in the paper "General-purpose text embeddings learning for Ukrainian language"
+Accompanying materials for the "General-purpose text embeddings learning for Ukrainian language"
+
+This repository contain the full code and data to reproduce all experiments. 
+Training and evaluation code are available in the `UkrTEB.ipynb` notebook (from getting the training data to evaluating the model on the benchmarks introduced in the study)
+The notebook if fully self-contained and can be run in Google Colab as is.
+
+**Please consider citing if you find it useful!**
 
 Models used in this study:
 ```python
@@ -7,15 +13,29 @@ model_names = [
     "intfloat/multilingual-e5-base",
     "sentence-transformers/LaBSE",
     "distiluse-base-multilingual-cased-v2",
-    
+]
+```
+English-only models used as teacher models in the study:
+```python
+model_names = [
+    "intfloat/e5-base-v2",
+    "BAAI/bge-base-en-v1.5",
+    "Alibaba-NLP/gte-base-en-v1.5",
+    "sentence-transformers/all-mpnet-base-v2"
+]
+```
+New models trained in this study:
+```python
+[
     "maiia-bocharova/ukr_sentence_gte_cos_sim",
     "maiia-bocharova/ukr_sentence_e5_cos_sim",
     "maiia-bocharova/ukr_sentence_bge_cos_sim",
+    "maiia-bocharova/ukr_sentence_mpnet_cos_sim"
     "maiia-bocharova/ukr_sentence_mpnet_cos_sim",
     "maiia-bocharova/ukr_sentence_mpnet_mse",
-
 ]
 ```
+**If you want to use the model for your unkrainian language embedding task - please use "maiia-bocharova/ukr_sentence_mpnet_cos_sim"**
 
 To download model
 ```
@@ -23,10 +43,10 @@ from sentence_transformers import SentenceTransformer
 model = SentenceTransformer(
     model_name,
     device="cuda",
-    trust_remote_code=True
+    trust_remote_code=True # only for 
 )
 ```
-Available daasets
+New benchmark datasets
 ```python
 dataset_names = [
     "maiia-bocharova/ukr_teb-books_blobs",
@@ -51,4 +71,4 @@ dataset = datasets.load_dataset(dataset_name)
 ```
 Alternatively data is available in `CSV` format under `/data` directory
 
-Training and evaluation code are available in the `UkrTEB.ipynb` notebook
+
