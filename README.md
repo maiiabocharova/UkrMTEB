@@ -1,13 +1,13 @@
 # UkrMTEB
 Accompanying materials for the "General-purpose text embeddings learning for Ukrainian language"
 
-This repository contain the full code and data to reproduce all experiments. 
+This repository contains the full code and data to reproduce all experiments. 
 Training and evaluation code are available in the `UkrTEB.ipynb` notebook (from getting the training data to evaluating the model on the benchmarks introduced in the study)
 The notebook if fully self-contained and can be run in Google Colab as is.
 
-**Please consider citing if you find it useful!**
+**Please consider citing the paper if you find it useful!**
 
-Models used in this study:
+Multilingual models used as baselines in this study:
 ```python
 model_names = [
     "intfloat/multilingual-e5-base",
@@ -37,7 +37,7 @@ New models trained in this study:
 ```
 **If you want to use the model for your unkrainian language embedding task - please use "maiia-bocharova/ukr_sentence_mpnet_cos_sim"**
 
-To download model
+To download model:
 ```
 from sentence_transformers import SentenceTransformer
 model = SentenceTransformer(
@@ -64,7 +64,7 @@ dataset_names = [
 ]
 ```
 
-To load the dataset from hub run:
+To load the dataset from `huggingface_hub` run:
 ```python
 import datasets
 dataset = datasets.load_dataset(dataset_name)
